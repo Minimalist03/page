@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Adiós Nicotina | Método Natural</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0288d1; /* Azul Médico */
+            --secondary: #27ae60; /* Verde Saúde */
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #666666;
+            --border: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; }
+        .text-center { text-align: center; }
+        .highlight { color: var(--primary); }
+        .bold { font-weight: 700; }
+
+        /* CONTAINER */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; position: relative; }
+        
+        /* HEADER */
+        header { background: var(--white); padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.2rem; font-weight: 800; color: var(--dark); text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--secondary); }
+
+        /* HERO SECTION */
+        .hero { padding: 60px 0; background: linear-gradient(180deg, #fff 0%, #e3f2fd 100%); text-align: center; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 20px; color: var(--dark); }
+        .hero p { font-size: 1.1rem; color: var(--gray); max-width: 700px; margin: 0 auto 30px; }
+        .hero-img { width: 100%; max-width: 350px; margin: 20px auto; display: block; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); }
+
+        /* BUTTONS */
+        .btn { display: inline-block; background: var(--secondary); color: white; padding: 18px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; text-transform: uppercase; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); transition: transform 0.2s; border: none; cursor: pointer; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4); }
+        .btn-small { padding: 12px 25px; font-size: 0.9rem; }
+
+        /* SECTIONS */
+        section { padding: 60px 0; background: var(--white); }
+        .section-gray { background-color: #f9f9f9; }
+        
+        .section-title { font-size: 1.8rem; margin-bottom: 40px; text-align: center; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary); margin: 15px auto 0; border-radius: 2px; }
+
+        /* PROBLEM / SOLUTION */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .icon-box { background: #fff; padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .icon-box h3 { margin-bottom: 10px; color: var(--primary); }
+
+        /* WHAT YOU GET */
+        .modules-list { list-style: none; margin-top: 30px; }
+        .modules-list li { background: #f0f7ff; margin-bottom: 12px; padding: 15px 20px; border-radius: 8px; border-left: 5px solid var(--primary); font-weight: 500; display: flex; align-items: center; }
+        .modules-list li::before { content: '✓'; color: var(--primary); font-weight: 900; margin-right: 15px; font-size: 1.2rem; }
+
+        /* TESTIMONIALS */
+        .review-card { background: var(--white); padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .stars { color: #f1c40f; margin-bottom: 10px; }
+        .user-info { display: flex; align-items: center; margin-top: 15px; }
+        .avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 10px; }
+        .name { font-weight: 700; font-size: 0.9rem; }
+
+        /* PRICING */
+        .price-box { border: 2px solid var(--primary); border-radius: 20px; padding: 40px 20px; max-width: 500px; margin: 0 auto; text-align: center; background: #fff; position: relative; overflow: hidden; }
+        .price-tag { background: var(--primary); color: white; padding: 5px 20px; position: absolute; top: 0; right: 0; font-size: 0.8rem; font-weight: 700; border-bottom-left-radius: 10px; }
+        .old-price { text-decoration: line-through; color: #999; font-size: 1.2rem; }
+        .new-price { font-size: 3rem; font-weight: 800; color: var(--secondary); line-height: 1; margin: 10px 0 20px; }
+        .guarantee-badge { width: 100px; margin: 20px auto; display: block; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+        .faq-question { font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { display: none; margin-top: 10px; color: var(--gray); font-size: 0.95rem; }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* FOOTER */
+        footer { background: #222; color: #888; padding: 40px 0; font-size: 0.8rem; text-align: center; }
+        footer a { color: #aaa; text-decoration: none; margin: 0 10px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.5rem; }
+            .new-price { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">ADIÓS<span>NICOTINA</span></div>
+            <a href="#oferta" class="btn btn-small">BAJAR AHORA</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span style="background: #e1f5fe; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">GUÍA DIGITAL OFICIAL</span>
+            <h1 style="margin-top: 20px;">Retoma el Control de tu Salud con el Método Alcalino de 10 Días</h1>
+            <p>Un protocolo paso a paso para limpiar tu organismo, reducir la ansiedad y crear nuevos hábitos saludables sin depender de parches ni medicamentos costosos.</p>
+            
+            <img src="https://placehold.co/350x450/png?text=Mockup+Protocolo+3D" alt="Guia Protocolo Adiós Nicotina" class="hero-img">
+
+            <div style="margin-top: 30px;">
+                <a href="SEU-LINK-CHECKOUT-AQUI" class="btn">DESCARGAR PROTOCOLO ($9.90)</a>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">📥 Acceso inmediato vía E-mail</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
+            <h2 class="section-title">¿Por qué es tan difícil parar?</h2>
+            <div class="grid-2">
+                <div>
+                    <p style="margin-bottom: 15px;">La mayoría de las personas cree que fumar es solo un "mal hábito". Pero la verdad es que <strong>es una trampa química.</strong></p>
+                    <p style="margin-bottom: 15px;">Cuando intentas dejarlo solo con fuerza de voluntad, tu cuerpo lucha contra ti. Los receptores de tu cerebro piden la sustancia y generan ansiedad, irritabilidad y hambre.</p>
+                    <p>Los métodos tradicionales (chicles, parches) fallan porque <strong>siguen introduciendo la sustancia en tu cuerpo</strong>, en lugar de limpiarlo.</p>
+                </div>
+                <div>
+                    <div class="icon-box">
+                        <h3>❌ El Error Común</h3>
+                        <p>Intentar luchar contra la ansiedad sin preparar el terreno biológico de tu cuerpo primero.</p>
+                    </div>
+                    <div class="icon-box" style="border-left: 5px solid var(--secondary);">
+                        <h3>✅ La Solución Natural</h3>
+                        <p>Utilizar una reacción alcalina simple para "resetear" el paladar y reducir la urgencia física.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Lo que recibirás en el Guía</h2>
+            <div class="grid-2">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1544367563-12123d895951?auto=format&fit=crop&w=600&q=80" alt="Vida Saudável" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                </div>
+                <div>
+                    <p>El <strong>Protocolo Adiós Nicotina</strong> es un manual digital práctico, directo al punto. Sin teorías aburridas, solo el plan de acción.</p>
+                    <ul class="modules-list">
+                        <li><strong>La Receta Alcalina:</strong> Los 2 ingredientes de tu cocina que cambian el juego.</li>
+                        <li><strong>Calendario de 10 Días:</strong> Qué comer y beber mañana, tarde y noche.</li>
+                        <li><strong>Gestión de Gatillos:</strong> Cómo tomar café o cerveza sin recaer.</li>
+                        <li><strong>Bonus:</strong> Rutina de respiración para recuperar capacidad pulmonar.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray" id="oferta">
+        <div class="container">
+            <div class="price-box">
+                <div class="price-tag">OFERTA ESPECIAL</div>
+                <h3>Protocolo Completo</h3>
+                <p>Acceso Vitalicio + Actualizaciones</p>
+                
+                <div style="margin: 30px 0;">
+                    <div class="old-price">De $47.00</div>
+                    <div class="new-price">$9.90 USD</div>
+                    <p style="color: var(--secondary); font-weight: 700;">(Precio único, sin mensualidades)</p>
+                </div>
+
+                <a href="SEU-LINK-CHECKOUT-AQUI" class="btn" style="width: 100%;">QUIERO LIMPIAR MI ORGANISMO</a>
+                
+                <img src="https://img.icons8.com/fluency/96/guarantee.png" alt="Garantia" class="guarantee-badge">
+                <p style="font-size: 0.9rem;"><strong>Garantía de 10 Días:</strong> Si no te gusta el contenido, te devolvemos el 100% de tu dinero. Sin preguntas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" style="max-width: 700px;">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Recibiré algo en mi casa? <span>+</span></div>
+                <div class="faq-answer">No. El protocolo es 100% digital (formato PDF). Lo recibes en tu correo electrónico inmediatamente después de la compra para empezar hoy mismo.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Necesito comprar medicamentos caros? <span>+</span></div>
+                <div class="faq-answer">No. El método se basa en ingredientes naturales que probablemente ya tienes en tu cocina o puedes comprar en cualquier supermercado por menos de $5 dólares.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Funciona si fumo hace 20 años? <span>+</span></div>
+                <div class="faq-answer">Sí. El enfoque es biológico y conductual, diseñado para ayudar a limpiar receptores independientemente del tiempo de uso.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Protocolo Adiós Nicotina © 2024</strong></p>
+            <p>Este sitio no es parte del sitio web de Facebook o Facebook Inc. Además, este sitio no está respaldado por Facebook de ninguna manera.</p>
+            <div style="margin-top: 20px;">
+                <a href="#">Política de Privacidad</a> | 
+                <a href="#">Términos de Uso</a> | 
+                <a href="#">Contacto</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.7rem; color: #555;">Los resultados pueden variar de persona a persona. Consulte a su médico antes de iniciar cualquier cambio en su dieta.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const parent = element.parentElement;
+            parent.classList.toggle('active');
+            const span = element.querySelector('span');
+            span.innerText = parent.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+</body>
+</html>
